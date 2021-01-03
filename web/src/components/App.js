@@ -6,13 +6,13 @@ import Trip from './Trip.js';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App cloud l">
       <div className="container">
         <div className="row">
-          <h1 className="my-4">เที่ยวไหนดี</h1>
+          <div className="my-3 title cloud l">เที่ยวไหนดี</div>
         </div>
         <Search></Search>
-        <div className="mt-4"></div>
+        <div className="mt-5"></div>
         <Trip></Trip>
         <Trip></Trip>
         <Trip></Trip>

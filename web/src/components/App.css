@@ -68,7 +68,13 @@
   text-decoration: underline;
 }
 
+.location-text{
+  color: gray;
+}
+
 .location-name{
+  font-family: Cloud-bold;
+  color: black;
   font-size: 2em;
   font-weight: 600;
 }
@@ -78,4 +84,27 @@
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;  
   overflow: hidden;
+}
+
+.title{
+  font-size: 5em;
+  color: #2C9CDB
+}
+
+@font-face {
+	font-family: Cloud-bold;
+	src: url(./assets/fonts/Cloud-Bold.otf);
+}
+
+@font-face {
+	font-family: Cloud-light;
+	src: url(./assets/fonts/Cloud-Light.otf);
+}
+
+.cloud .l{
+  font-family: Cloud-light;
+}
+
+.cloud .b{
+  font-family: Cloud-bold;
 }

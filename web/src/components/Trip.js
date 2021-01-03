@@ -2,7 +2,7 @@ import React from "react";
 
 function Trip() {
   return (
-    <div className="mb-4">
+    <div className="mb-5">
       <div className="row justify-content-center">
         <div className="col-2">
           <div
