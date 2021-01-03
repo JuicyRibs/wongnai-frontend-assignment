@@ -38,18 +38,44 @@
 }
 
 .thumb{
-  height: 400px;
-  width: 200px;
+  height: 300px;
+  width: 100%;
 
 }
 
 .preview{
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
+  margin: 0 0.3rem;
 }
 
 .thumb, .preview{
-  border-radius: 50px;
+  border-radius: 25px;
   background-repeat: no-repeat;
   background-size: auto;
+}
+
+.tags span {
+	padding-right: 0.3em;
+	margin-right: 0.3em;
+}
+
+.tags span:last-child {
+	padding-right: 0.3em;
+}
+
+.tags{
+  text-decoration: underline;
+}
+
+.location-name{
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.location-description{
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }
