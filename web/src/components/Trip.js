@@ -1,52 +1,69 @@
 import React from "react";
 
-function Trip() {
+function Trip(props) {
+  console.log(props.trips[0]);
   return (
-    <div className="mb-5">
-      <div className="row justify-content-center">
-        <div className="col-2">
-          <div
-            className="thumb"
-            style={{
-              backgroundImage: `url(https://img.wongnai.com/p/1600x0/2019/07/02/3c758646aa6c426ba3c6a81f57b20bd6.jpg)`,
-            }}
-          ></div>
-        </div>
-        <div className="col-4">
-          <div className="row text-start location-text">
-            <div className="location-name" style={{ height: "60px" }}>Place Name</div>
-            <div className="location-description" style={{ height: "100px" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque, dolor vitae tempus scelerisque, nisl ante semper ante, non vehicula orci velit in tellus. Integer tincidunt enim ut dolor ultrices convallis. Morbi et dui non risus dapibus consequat. Cras nec sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque, dolor vitae tempus scelerisque, nisl ante semper ante, non vehicula orci velit in tellus. Integer tincidunt enim ut dolor ultrices convallis. Morbi et dui non risus dapibus consequat. Cras nec sem</div>
-            <div className="tags" style={{ height: "40px" }}>
-              <span>Tag1</span>
-              <span>Tag2</span>
-              <span>Tag3</span>
+    <div>
+      {props.trips.map((trip) => (
+        <div className="row flex-column flex-md-row justify-content-center mb-5" key={trip.eid}>
+          <div className="col-lg-2 col-md-4 col-12">
+            <div
+              className="thumb"
+              style={{
+                backgroundImage: `url(${trip.photos[0]})`,
+              }}
+            ></div>
+          </div>
+          <div className="col-lg-4 col-md-8 col-12">
+            <div className="row text-start align-middle location-text">
+              <div className="location-name" style={{ height: "45px" }}>
+                <a href={trip.url}>{trip.title}</a>
+              </div>
+              <div
+                className="location-description cloud l"
+                style={{ height: "78px" }}
+              >
+                {trip.description.substring(0, 200)}<a href={trip.url} className="readMore"> &#8230;อ่านต่อ</a>
+              </div>
+              <div className="tagList cloud l" style={{ height: "68px" }}>
+                <div>
+                  หมวด - &nbsp;
+                  {trip.tags.map((tag, index, tags, trip) => (
+                    <span>
+                      {index === tags.length - 1 ? " และ " : ""}
+                      <span className="tags" key={index} onClick={props.tagClick.bind(this, tag)}>
+                        {tag}
+                      </span>{" "}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="row justify-content-center justify-content-md-start">
+              <span
+                className="preview"
+                style={{
+                  backgroundImage: `url(${trip.photos[1]})`,
+                }}
+              ></span>
+
+              <span
+                className="preview"
+                style={{
+                  backgroundImage: `url(${trip.photos[2]})`,
+                }}
+              ></span>
+
+              <span
+                className="preview"
+                style={{
+                  backgroundImage: `url(${trip.photos[3]})`,
+                }}
+              ></span>
             </div>
           </div>
-          <div className="row justify-content-start">
-              <span
-                className="preview"
-                style={{
-                  backgroundImage: `url(https://img.wongnai.com/p/1600x0/2019/07/02/3c758646aa6c426ba3c6a81f57b20bd6.jpg)`,
-                }}
-              ></span>
-
-              <span
-                className="preview"
-                style={{
-                  backgroundImage: `url(https://img.wongnai.com/p/1600x0/2019/07/02/3c758646aa6c426ba3c6a81f57b20bd6.jpg)`,
-                }}
-              ></span>
-
-
-              <span
-                className="preview"
-                style={{
-                  backgroundImage: `url(https://img.wongnai.com/p/1600x0/2019/07/02/3c758646aa6c426ba3c6a81f57b20bd6.jpg)`,
-                }}
-              ></span>
-          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 }

@@ -38,8 +38,11 @@
 }
 
 .thumb{
-  height: 300px;
+  min-height: 180px;
+  height: 100%;
   width: 100%;
+  background-position: center;
+  background-size: cover;
 
 }
 
@@ -47,12 +50,15 @@
   height: 100px;
   width: 100px;
   margin: 0 0.3rem;
+  background-position: center;
+  background-size: cover;
 }
+
+
 
 .thumb, .preview{
   border-radius: 25px;
   background-repeat: no-repeat;
-  background-size: auto;
 }
 
 .tags span {
@@ -60,11 +66,8 @@
 	margin-right: 0.3em;
 }
 
-.tags span:last-child {
-	padding-right: 0.3em;
-}
-
 .tags{
+  transition: 0.3s;
   text-decoration: underline;
 }
 
@@ -77,6 +80,24 @@
   color: black;
   font-size: 2em;
   font-weight: 600;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;  
+  transition: 0.3s;
+}
+
+.location-name>a{
+  text-decoration: none;
+  color: black;
+}
+
+.tags:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.location-name:hover{
+  transform: scale(1.03);
 }
 
 .location-description{
@@ -107,4 +128,20 @@
 
 .cloud .b{
   font-family: Cloud-bold;
+}
+
+.tagList{
+  padding-top: 1em;
+  font-size: 0.8em;
+}
+
+.readMore{
+  color: #52AFE4;
+  text-decoration: none;
+
+}
+
+.title>a{
+  text-decoration: none;
+  color: #2C9CDB;
 }
